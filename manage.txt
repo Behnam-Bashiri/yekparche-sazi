@@ -9,5 +9,5 @@ python manage.py migrate
 python manage.py runservre 
 
 #runserver on ip 
-python manage.py runserver ip.ip.ip.ip:prot 
+python manage.py runserver ip.ip.ip.ip:port
 EX : python manage.py runserver 0.0.0.0:8000
