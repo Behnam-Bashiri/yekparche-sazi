@@ -1,0 +1,9 @@
+{
+    "app": "csa-uk-back",
+    "disks": [
+        {
+            "name": "sqlite",
+            "mountTo": "data"
+        }
+    ]
+}
