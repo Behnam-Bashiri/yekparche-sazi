@@ -42,7 +42,7 @@ class TemplateViewSet(viewsets.ModelViewSet):
     def destroy(self, request, pk=None):
         return JsonResponse({'message': 'این عمل قابل انجام نیست'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
     
-class AccountList(TemplateViewSet):
+class AccountList(viewsets.ModelViewSet):
     queryset = Account.objects.all()
     serializer_class = AccountSerlizer
     # permission_classes = [DjangoModelPermissions]
@@ -53,7 +53,7 @@ class AccountList(TemplateViewSet):
         return JsonResponse({'data': user_response.data}, status=status.HTTP_200_OK)
 
 
-class Base_deviceList(TemplateViewSet):
+class Base_deviceList(viewsets.ModelViewSet):
     queryset = Base_device.objects.all()
     serializer_class = Base_deviceSerlizer
     # permission_classes = [DjangoModelPermissions]
@@ -63,7 +63,7 @@ class Base_deviceList(TemplateViewSet):
         user_response = self.serializer_class(query,many=True)
         return JsonResponse({'data': user_response.data}, status=status.HTTP_200_OK)
 
-class LaptopList(TemplateViewSet):
+class LaptopList(viewsets.ModelViewSet):
     queryset = Laptop.objects.all()
     serializer_class = LaptopSerlizer
     # permission_classes = [DjangoModelPermissions]
@@ -73,7 +73,7 @@ class LaptopList(TemplateViewSet):
         user_response = self.serializer_class(query,many=True)
         return JsonResponse({'data': user_response.data}, status=status.HTTP_200_OK)
 
-class TabletList(TemplateViewSet):
+class TabletList(viewsets.ModelViewSet):
     queryset = Tablet.objects.all()
     serializer_class = TabletSerlizer
     # permission_classes = [DjangoModelPermissions]
@@ -83,7 +83,7 @@ class TabletList(TemplateViewSet):
         user_response = self.serializer_class(query,many=True)
         return JsonResponse({'data': user_response.data}, status=status.HTTP_200_OK)
 
-class PhoneList(TemplateViewSet):
+class PhoneList(viewsets.ModelViewSet):
     queryset = Phone.objects.all()
     serializer_class = PhoneSerlizer
     # permission_classes = [DjangoModelPermissions]
@@ -93,7 +93,7 @@ class PhoneList(TemplateViewSet):
         user_response = self.serializer_class(query,many=True)
         return JsonResponse({'data': user_response.data}, status=status.HTTP_200_OK)
 
-class CpuList(TemplateViewSet):
+class CpuList(viewsets.ModelViewSet):
     queryset = Cpu.objects.all()
     serializer_class = CpuSerlizer
     # permission_classes = [DjangoModelPermissions]
