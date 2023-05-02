@@ -1,8 +1,12 @@
-from django.urls import path,include
+from django.urls import include, path
+from rest_framework import routers
 from .views import *
 
-urlpatterns = [
-    path("test/",return_helloWolrd),
-]
 
-# 127.0.0.1:8000/api2/test/
+router = routers.DefaultRouter()
+
+router.register(r'account', )
+
+urlpatterns = [
+    path('', include(router.urls)),
+]

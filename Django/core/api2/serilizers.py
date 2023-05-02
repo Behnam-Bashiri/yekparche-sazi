@@ -31,3 +31,10 @@ class LaptopSerlizer(serializers.ModelSerializer):
     class Meta:
         model = Laptop
         fields = '__all__'
+
+    def to_representation(self,instance):
+        response =super().to_representation(instance)
+        # response['Cpu'] = CpuSerlizer(instance.cpu).data['core']
+        # response['WT'] = 'yekparchesazi'
+        return response
+    
