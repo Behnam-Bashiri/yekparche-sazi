@@ -5,12 +5,12 @@ from .views import *
 
 router = routers.DefaultRouter()
 
-router.register(r'account', )
-router.register(r'base_device', )
-router.register(r'Cpu', )
-router.register(r'Phone', )
-router.register(r'Tablet', )
-router.register(r'Laptop', )
+router.register(r'account',AccountList )
+router.register(r'base_device',Base_deviceList )
+router.register(r'Cpu',CpuList )
+router.register(r'Phone',PhoneList )
+router.register(r'Tablet',TabletList )
+router.register(r'Laptop',LaptopList )
 
 urlpatterns = [
     path('', include(router.urls)),

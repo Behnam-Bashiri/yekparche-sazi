@@ -38,7 +38,33 @@ class TemplateViewSet(viewsets.ModelViewSet):
     def destroy(self, request, pk=None):
         return JsonResponse({'message': 'این عمل قابل انجام نیست'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
     
-class UserList(TemplateViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializers
+class AccountList(TemplateViewSet):
+    queryset = Account.objects.all()
+    serializer_class = AccountSerlizer
+    # permission_classes = [DjangoModelPermissions]
+
+
+class Base_deviceList(TemplateViewSet):
+    queryset = Base_device.objects.all()
+    serializer_class = Base_deviceSerlizer
+    # permission_classes = [DjangoModelPermissions]
+
+class LaptopList(TemplateViewSet):
+    queryset = Laptop.objects.all()
+    serializer_class = LaptopSerlizer
+    # permission_classes = [DjangoModelPermissions]
+
+class TabletList(TemplateViewSet):
+    queryset = Tablet.objects.all()
+    serializer_class = TabletSerlizer
+    # permission_classes = [DjangoModelPermissions]
+
+class PhoneList(TemplateViewSet):
+    queryset = Phone.objects.all()
+    serializer_class = PhoneSerlizer
+    # permission_classes = [DjangoModelPermissions]
+
+class CpuList(TemplateViewSet):
+    queryset = Cpu.objects.all()
+    serializer_class = CpuSerlizer
     # permission_classes = [DjangoModelPermissions]
