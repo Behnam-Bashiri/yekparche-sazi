@@ -47,9 +47,9 @@ class AccountList(viewsets.ModelViewSet):
     serializer_class = AccountSerlizer
     # permission_classes = [DjangoModelPermissions]
 
-    def list(self):
+    def list(self,request):
         query = self.queryset
-        user_response = self.serializer_class(query,many=True)
+        user_response = CustomAccountSerlizer(query,many=True)
         return JsonResponse({'data': user_response.data}, status=status.HTTP_200_OK)
 
 
@@ -58,7 +58,7 @@ class Base_deviceList(viewsets.ModelViewSet):
     serializer_class = Base_deviceSerlizer
     # permission_classes = [DjangoModelPermissions]
 
-    def list(self):
+    def list(self,request):
         query = self.queryset
         user_response = self.serializer_class(query,many=True)
         return JsonResponse({'data': user_response.data}, status=status.HTTP_200_OK)
@@ -68,7 +68,7 @@ class LaptopList(viewsets.ModelViewSet):
     serializer_class = LaptopSerlizer
     # permission_classes = [DjangoModelPermissions]
 
-    def list(self):
+    def list(self,request):
         query = self.queryset
         user_response = self.serializer_class(query,many=True)
         return JsonResponse({'data': user_response.data}, status=status.HTTP_200_OK)
@@ -78,7 +78,7 @@ class TabletList(viewsets.ModelViewSet):
     serializer_class = TabletSerlizer
     # permission_classes = [DjangoModelPermissions]
 
-    def list(self):
+    def list(self,request):
         query = self.queryset
         user_response = self.serializer_class(query,many=True)
         return JsonResponse({'data': user_response.data}, status=status.HTTP_200_OK)
@@ -88,7 +88,7 @@ class PhoneList(viewsets.ModelViewSet):
     serializer_class = PhoneSerlizer
     # permission_classes = [DjangoModelPermissions]
 
-    def list(self):
+    def list(self,request):
         query = self.queryset
         user_response = self.serializer_class(query,many=True)
         return JsonResponse({'data': user_response.data}, status=status.HTTP_200_OK)
@@ -98,7 +98,7 @@ class CpuList(viewsets.ModelViewSet):
     serializer_class = CpuSerlizer
     # permission_classes = [DjangoModelPermissions]
 
-    def list(self):
+    def list(self,request):
         query = self.queryset
         user_response = self.serializer_class(query,many=True)
         return JsonResponse({'data': user_response.data}, status=status.HTTP_200_OK)

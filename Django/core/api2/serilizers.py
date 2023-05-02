@@ -7,6 +7,11 @@ class AccountSerlizer(serializers.ModelSerializer):
         model = Account
         fields = '__all__'
 
+class CustomAccountSerlizer(AccountSerlizer):
+    class Meta:
+        model = Account
+        fields = ('Name','Phone')
+
 class Base_deviceSerlizer(serializers.ModelSerializer):
     class Meta:
         model = Base_device
