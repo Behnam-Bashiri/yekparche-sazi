@@ -22,9 +22,9 @@ from django.shortcuts import get_object_or_404
 
 
 class TemplateViewSet(viewsets.ModelViewSet):
-    search_fields = []
+    # search_fields = []
     ordering_fields = '__all_related__'
-    user_profile_model = None
+    # user_profile_model = None
 
     def list(self, request):
         return JsonResponse({'message': 'این عمل قابل انجام نیست'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
