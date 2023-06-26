@@ -2,7 +2,32 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 
+from django.contrib.auth.models import AbstractUser
 
+from . import managers # we will write this file shortly
+
+
+# class CustomUser(AbstractUser):
+#     username = None
+#     email = models.EmailField(_('email address'), unique=True)
+#     gender = models.CharField(
+#         max_length=140,
+#         null=True,
+#         choices=(
+#             ('Male', 'Male'),
+#             ('Female', 'Female'),
+#             ('Other', 'Other')
+#         )
+#     )
+#     # picture = models.models.ImageField(upload_to='uploads/% Y/% m/% d/')
+#     USERNAME_FIELD = 'email'
+#     REQUIRED_FIELDS = []
+
+#     objects = managers.CustomUserManager()
+
+#     def __str__(self):
+#         return f"{self.email}'s custom account"
+    
 class PStatus(models.IntegerChoices):
     BUSY = 1, _('Busy')
     IDLE = 0, _('Idle')
