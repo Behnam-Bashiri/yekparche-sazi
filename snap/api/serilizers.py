@@ -7,7 +7,20 @@ from .models import *
 class DriverSerializers(serializers.ModelSerializer):
     class Meta:
         model = Driver
-        fields = '__all__'
+        fields =  '__all__'
+    
+    # def to_representation(self, instance):
+    #     response = super().to_representation(instance)
+    #     template_respone = response
+    #     response = {}
+    #     response['plak'] = template_respone['license_plate']
+    #     return response
+
+
+class CustomDriverSerializers(DriverSerializers):
+    class Meta:
+        model = Driver
+        fields =  ('status',)
 
 
 class CustomerSerializers(serializers.ModelSerializer):

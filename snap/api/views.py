@@ -31,3 +31,12 @@ class TemplateViewSet(viewsets.ModelViewSet):
 
     def destroy(self, request, pk=None):
         return JsonResponse({'message': 'این عمل قابل انجام نیست'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+    
+class TripList(TemplateViewSet):
+    queryset = Trip
+    serializer_class = TripSerializers
+
+    @action(methods=['get'],detail=False)
+    def get_star(self,param):
+        response_json = CustomDriverSerializers(Driver.objects.all())
+        return JsonResponse({'message': 'این عمل قابل انجام نیست'}, status=status.HTTP_200_OK)
